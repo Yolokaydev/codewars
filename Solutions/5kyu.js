@@ -12,7 +12,7 @@ export function moveZeros(arr) {
 //https://www.codewars.com/kata/52685f7382004e774f0001f7
 export function humanReadable(seconds) {
   let sec = seconds % 60;
-  let minutes = (Math.floor(seconds / 60)) % 60;
+  let minutes = Math.floor(seconds / 60) % 60;
   let hours = Math.floor(seconds / 3600);
 
   function formatNumber(number) {
@@ -23,5 +23,30 @@ export function humanReadable(seconds) {
   }
 
   return `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(sec)}`;
+}
 
+//https://www.codewars.com/kata/525c65e51bf619685c000059/train/javascript
+export function cakes(recipe, available) {
+  let result = Infinity;
+
+  for (let x in recipe) {
+    result = Math.min(Math.floor(available[x] / recipe[x]), result);
+  }
+
+  return result || 0;
+}
+
+//https://www.codewars.com/kata/52449b062fb80683ec000024
+export function generateHashtag(str) {
+  if (str.trim() === '') return false;
+
+  let camelcaseString = str
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
+
+  let hasgtag = "#" + camelcaseString;
+
+  return hasgtag.length > 140 ? false : hasgtag;
+  
 }
