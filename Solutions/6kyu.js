@@ -65,6 +65,29 @@ export function likes(names) {
 }
 
 //https://www.codewars.com/kata/523f5d21c841566fde000009
-function arrayDiff(a, b) {
+export function arrayDiff(a, b) {
   return a.filter(x => !b.includes(x));
+}
+
+//https://www.codewars.com/kata/525f50e3b73515a6db000b83
+//"(123) 456-7890"
+export function createPhoneNumber(numbers){
+  return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
+}
+
+//https://www.codewars.com/kata/526571aae218b8ee490006f4
+export function countBits(n){
+  let count = 0;
+  let binary = n.toString(2);
+  for (let i = 0; i < binary.length; i++) {
+    if (binary[i] === "1") {
+      count++;
+    }
+  }
+  return count;
+}
+
+//https://www.codewars.com/kata/5526fc09a1bbd946250002dc
+export function findOutlier(integers){
+  
 }
