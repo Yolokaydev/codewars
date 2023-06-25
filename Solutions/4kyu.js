@@ -30,3 +30,47 @@ export function formatDuration(seconds) {
   }
   return readable;
 }
+
+//https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1
+export function snail(array) {
+  // let newArray = [];
+  // for (let index = 0; index < array.length; index++) {
+  //   let element = array[index];
+  //   //console.log(element);
+  //   // console.log(`element index: ${index}, element: ${element}` );
+  //   if(index%2 != 0) {
+  //     element.reverse();
+  //   }
+  //   for (let el of element) {
+  //     newArray.push(el);
+  //   }
+  // }
+  // return newArray;
+}
+
+//https://www.codewars.com/kata/51c8e37cee245da6b40000bd/train/javascript
+export function solution(input, markers) {
+  let comment = input.split("\n");
+  let lines = [];
+  let newlines = [];
+  for (let string of comment) {
+    lines.push(string);
+  }
+
+  for (let marker of markers) {
+    for (let line of lines) {
+      let index = line.indexOf(marker);
+      //console.log(`marker: ${marker} index: ${index}`);
+      if (index !== -1) {
+        newlines = line.slice(0, index);
+      } else {
+        newlines = line;
+        
+      }
+    }
+  }
+
+  //String.trimEnd()
+  console.log(lines);
+  console.log(newlines);
+}

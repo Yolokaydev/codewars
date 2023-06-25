@@ -38,15 +38,32 @@ export function cakes(recipe, available) {
 
 //https://www.codewars.com/kata/52449b062fb80683ec000024
 export function generateHashtag(str) {
-  if (str.trim() === '') return false;
+  if (str.trim() === "") return false;
 
   let camelcaseString = str
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join('');
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("");
 
   let hasgtag = "#" + camelcaseString;
 
   return hasgtag.length > 140 ? false : hasgtag;
-  
 }
+
+//https://www.codewars.com/kata/52bc74d4ac05d0945d00054e
+export function firstNonRepeatingLetter(s) {
+  let chars = [];
+
+  for (let char of s) {
+    let count = 0;
+    chars.push(char);
+
+    for (let c of s) {
+      if (c.toLowerCase() === char.toLowerCase()) count++;
+    }
+    if (count === 1) return char;
+  }
+
+  return "";
+}
+//https://www.codewars.com/kata/514a024011ea4fb54200004b
